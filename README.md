@@ -2,6 +2,8 @@ Mochammad Ezar Yudha
 2206046746
 CS KKI
 
+Assignment 2
+
 1. How do you implement the tasks in the checklist? Explain in a step-by-step manner (not just copy-paste from the tutorial).
 >> I first initilize a git repository that will be used as the base of the django project.
 > This is done by creating a git repository on github, then creating a local repository and performing add, push, and commit so that the changes can be stored on the central repository on github.
@@ -41,4 +43,30 @@ MVT stands for Model, View, and Template. The model serves as a database schema 
 
 MVVM stands for Model, View, and ViewModel. Model hands the data logic. View serves as an interface of the application. ViewModel links the view to the model by data binding.
 
+
+
+
+
+
+Assignment 3
+
+1.What is the difference between POST form and GET form in Django?
+In post form data submitted is included in the HTTP request body rather than in the URL. This form is suitable when transmitting sensitive data such as login information. On the other hand, data submitted in get form is appended to the URL as query parameters, this may cause security risks.
+
+2.What are the main differences between XML, JSON, and HTML in the context of data delivery?
+XML (Extensible Markup Language) is self-descriptive and is used to represent data hierarchically using tags. JSON (JavaScript Object Notation) represents data using key-value pairs. HTML (The HyperText Markup Language) uses tags to structure content on webpages.
+
+3.Why is JSON often used in data exchange between modern web applications?
+JSON's readibility is the one of the main reasons why its use so widespead among modern web applications. The representation of data as key-value pairs allow developers to easily understand the structure.
+
+4.Explain how you implemented the checklist above step-by-step (not just following the tutorial).
+
+Create a form input to add a model object to the previous app.
+I created a new file called forms.py and added code to accept new data as input. This code consists of a class that contains the variable fields which is used to select the attributes from the model.
+
+Add 5 views to view the added objects in HTML, XML, JSON, XML by ID, and JSON by ID formats.
+I created 5 different functions, one for each format, in the views.py file. Each of them will accept Item objects and return the data in their respective formats.
+
+Create URL routing for each of the views added in point 2.
+I added the URL paths for each format to the urlpatterns list in urls.py
 
