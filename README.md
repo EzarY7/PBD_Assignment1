@@ -70,3 +70,31 @@ I created 5 different functions, one for each format, in the views.py file. Each
 Create URL routing for each of the views added in point 2.
 I added the URL paths for each format to the urlpatterns list in urls.py.
 
+Assignment 4
+
+1.What is UserCreationForm in Django? Explain its advantages and disadvantages.
+UserCreationForm is a built in tool in django which allows the creation of user accounts. Its simple to use and ensures security and validation from the user. It is limited by how basic it looks visually and it is less flexible due to the lack of control we have when compared to buulding a registration form from scratch.
+
+2.What is the difference between authentication and authorization in Django application? Why are both important?
+Authentication is the process of verifying the user's indentity wheras authorization is the process of determining what that user is able to access. They are both important in order to ensure security and privacy by reducing the amount of unauthorized user's accessing data.
+
+3.What are cookies in website? How does Django use cookies to manage user session data?
+Cookies are client-side files temporarily stored on the system which includes things such as login-status and browsing activities. Cookies are used to improve the user's experience as well as to analyze the user's behavior. One way that Django utilizes this is by allowing user's to see the time of their last log-in.
+
+4.Are cookies secure to use? Is there potential risk to be aware of?
+Cookies are generally safe to use. However, there are potential risks that developers need to consider. One such risk is the case where an attacker steals a user's cookies and therefore is able to impersonate the user. Developer's also need to ensure that sensitive data stored in cookies are encrypted to add extra security.
+
+5.Explain how you implemented the checklist above step-by-step (not just following the tutorial).
+
+Implement registration, login, and logout functions to allow users to access the previous application.
+I first imported UserCreationForm which is a built in form in django which simplifies te creation of a registration form. I then created the form function in views.py and added an html file for the registration form. I then added the url path for the registration form. I then imported built in functions for login and logout and followed a similar procedure as with the registration form.
+
+Create two user accounts with three dummy data entries for each account using the model previously created in the application.
+I simply created 2 accounts and added 3 entries for each.
+
+Connect Item model with User
+I modified the model to create a relationship that associates each item to one user. I then modified the show main function so that the website displays items associated with the user. I then applied migrations to save the changes made to the model.
+
+Display the information of the logged-in user, such as their username, and applying cookies, such as last login, on the main application page.
+I modified the 'name' variable in the model so that it shows the user's name. I then modified the views.py file to include information on the user's last login.
+

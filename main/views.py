@@ -20,14 +20,24 @@ from django.urls import reverse
 def show_main(request):
     items = Item.objects.filter(user=request.user)
     items = Item.objects.all()
-    context = {
-        'name': request.user.username,
-        'class': 'KKI',
-        'items': items,
-        'last_login': request.COOKIES['last_login'],
-    }
+    try:
+        context = {
+            'name': request.user.username,
+            'class': 'KKI',
+            'items': items,
+            'last_login': request.COOKIES['last_login'],
+        }
 
-    return render(request, 'main.html', context)
+        return render(request, 'main.html', context)
+    except KeyError:
+        context = {
+            'name': request.user.username,
+            'class': 'KKI',
+            'items': items,
+            'last_login':'',
+        }
+        return render(request, "main.html", context)
+        
 
 def create_item(request):
     form = ItemForm(request.POST or None)
