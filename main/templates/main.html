@@ -1,14 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Inventory</h1>
+    <h1 class= "text-center">Inventory</h1>
 
-    <h5>Name:</h5>
-    <p>{{name}}</p>
-
-    <h5>Class:</h5>
-    <p>{{class}}</p>
-
+    <h5 class= "text-center">Name:</h5>
+    <p class= "text-center"> {{name}}</p>
+    <div class="d-flex justify-content-center">
     <table>
         <tr>
             <th>Name</th>
@@ -25,22 +22,38 @@
                 <td>{{item.amount}}</td>
                 <td>{{item.description}}</td>
                 <td>{{item.date_added}}</td>
+                <td>
+                    <a href="{% url 'main:edit_item' item.pk %}">
+                        <button class = "btn btn-outline-primary"->
+                            Edit
+                        </button>
+                    </a>
+                    <a href="{% url 'main:delete_item' item.pk %}">
+                        <button class = "btn btn-outline-primary">
+                            Delete
+                        </button>
+                    </a>
+                </td>
             </tr>
         {% endfor %}
     </table>
-    
+</div>
     <br />
-    
+    <div class="d-flex justify-content-center">
     <a href="{% url 'main:create_item' %}">
-        <button>
+        <button class = "btn btn-outline-primary">
             Add New Item
         </button>
     </a>
+</div>
+<br>
+<div class="d-flex justify-content-center">
     <h5>Last login session: {{ last_login }}</h5>
 
     <a href="{% url 'main:logout' %}">
-        <button>
+        <button class = "btn btn-outline-danger">
             Logout
         </button>
     </a>
+</div>
     {% endblock content %}

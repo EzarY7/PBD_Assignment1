@@ -98,3 +98,20 @@ I modified the model to create a relationship that associates each item to one u
 Display the information of the logged-in user, such as their username, and applying cookies, such as last login, on the main application page.
 I modified the 'name' variable in the model so that it shows the user's name. I then modified the views.py file to include information on the user's last login.
 
+Assignment 5
+
+Explain the purpose of some CSS element selector and when to use it.
+Example: ID Selector.
+This selector selects an element with a unique ID. 
+
+Explain some of the HTML5 tags that you know.
+One example of an HTML tag is the <div> tag. It used to group elements in an HTML file which allows you to create a logical structure in the file.
+
+What are the differences between margin and padding?
+Paddings are used to control the space between the element and its border. Margins are used to control the the space outside the border.
+
+What are the differences between the CSS framework Tailwind and Bootstrap? When should we use Bootstrap rather than Tailwind, and vice versa?
+Tailwind allows a higher degree of customization when compared to bootstrap. This does, however, mean that it has a steeper learning curve. Bootstrap on the other hand, gives you access to a greater range of pre-designed UI components which is advantageous when we want to quickly make prototypes of our projects. Tailwind is the better option when we want to build a unique and highly customizable project.
+
+Explain how you implemented the checklist above step-by-step (not just following the tutorial).
+I first added an Edit item button which allows users to edit their existing items. Then, I added a delete button. Once all of the buttons had been created, I then added a bit of styling to the main page. I did this by editing the html files and used bootstrap as the framework to style the pages. I started by aligning everything to the center. Then, I edited the buttons so that their colors change when you hover the cursor over them.
