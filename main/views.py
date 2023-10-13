@@ -47,6 +47,8 @@ def create_item(request):
         item.user = request.user
         item.save()
         return HttpResponseRedirect(reverse('main:show_main'))
+    context = {'form': form}
+    return render(request, "create_item.html", context)
 
     
 def show_xml(request):
@@ -120,3 +122,21 @@ def delete_item(request, id):
     item.delete()
     # Return to the main page
     return HttpResponseRedirect(reverse('main:show_main'))
+
+def get_item_json(request):
+    item_object = Item.objects.all()
+    return HttpResponse(serializers.serialize('json', item_object))
+
+def add_item_ajax(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        amount = request.POST.get("amount")
+        description = request.POST.get("description")
+        user = request.user
+
+        new_item = Item(name=name, amount=amount, description=description, user=user)
+        new_item.save()
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()
