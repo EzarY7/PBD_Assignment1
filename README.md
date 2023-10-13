@@ -115,3 +115,16 @@ Tailwind allows a higher degree of customization when compared to bootstrap. Thi
 
 Explain how you implemented the checklist above step-by-step (not just following the tutorial).
 I first added an Edit item button which allows users to edit their existing items. Then, I added a delete button. Once all of the buttons had been created, I then added a bit of styling to the main page. I did this by editing the html files and used bootstrap as the framework to style the pages. I started by aligning everything to the center. Then, I edited the buttons so that their colors change when you hover the cursor over them.
+
+Assignment 6
+
+Explain the difference between asynchronous programming and synchronous programming
+In synchronous programming, tasks are executed one after the other in a sequential manner. In asynchronous programming, tasks are not executed one after the other in a strict sequence.
+
+In the implementation of JavaScript and AJAX, there is an implemented paradigm called the event-driven programming paradigm. Explain what this paradigm means and give one example of its implementation in this assignment.
+In event-driven programming, you define functions associated with a particular event. When an event occurs, its corresponding function is executed. An example of this paradigm from this assignment can be seen in the "Add item by AJAX" button.
+
+Explain the implementation of asynchronous programming in AJAX.
+In AJAX, asynchornous programming is implemented using the Fetch function
+
+
