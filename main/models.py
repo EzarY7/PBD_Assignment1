@@ -8,4 +8,5 @@ class Item(models.Model):
     date_added = models.DateField(auto_now_add=True)
     amount = models.IntegerField()
     description = models.TextField()
+    is_hidden = models.BooleanField(default=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -58,6 +58,11 @@
         </button>
     </a>
 </div>
+<style>
+.hidden {
+    background-color = #D6EEEE;
+}
+</style>   
 <script>
     async function getItems() {
         return fetch("{% url 'main:get_item_json' %}").then((res) => res.json())
@@ -72,12 +77,20 @@
             <th>Date Added</th>
         </tr>`
         items.forEach((item) => {
-            htmlString += `\n<tr>
+            if item.fields.is_hidden = True:
+            htmlString += `\n<tr class = hidden>
             <td>${item.fields.name}</td>
             <td>${item.fields.amount}</td>
             <td>${item.fields.description}</td>
             <td>${item.fields.date_added}</td>
         </tr>` 
+            else:
+            htmlString += `\n<tr>
+                <td>${item.fields.name}</td>
+                <td>${item.fields.amount}</td>
+                <td>${item.fields.description}</td>
+                <td>${item.fields.date_added}</td>
+            </tr>` 
         })
         
         document.getElementById("item_table").innerHTML = htmlString
